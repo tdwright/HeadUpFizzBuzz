@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzLib", "FizzBuzzLib\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzLib.Tests", "FizzBuzzLib.Tests\FizzBuzzLib.Tests.csproj", "{407A4642-D0F0-4FA0-AD90-A8242BD2B613}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadUpQueueClient", "HeadUpQueueClient\HeadUpQueueClient.csproj", "{4C501787-B1D2-4DAF-A2FD-C5DC363284F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{407A4642-D0F0-4FA0-AD90-A8242BD2B613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{407A4642-D0F0-4FA0-AD90-A8242BD2B613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{407A4642-D0F0-4FA0-AD90-A8242BD2B613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C501787-B1D2-4DAF-A2FD-C5DC363284F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C501787-B1D2-4DAF-A2FD-C5DC363284F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C501787-B1D2-4DAF-A2FD-C5DC363284F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C501787-B1D2-4DAF-A2FD-C5DC363284F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
