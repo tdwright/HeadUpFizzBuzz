@@ -20,12 +20,24 @@ namespace HeadUpFizzBuzz
                 { 3, "Head" },
                 { 5, "Up" }
             };
-
             var fb = new FizzBuzzLib.FizzBuzzer(replacements);
-            var seq = fb.FizzBuzz(1, 100).ToArray();
-            var json = JsonConvert.SerializeObject(seq);
 
-            return  (ActionResult)new OkObjectResult(json);
+            string num = req.Query["number"];
+            string reqBody = new StreamReader(req.Body).ReadToEnd();
+            dynamic data = JsonConvert.DeserializeObject(reqBody);
+            num = num ?? data?.number;
+
+            string json;
+            if (num != null && int.TryParse(num,out int n))
+            {
+                json = JsonConvert.SerializeObject(fb.ProcessInt(n));
+            }
+            else
+            {
+                var seq = fb.FizzBuzz(1, 100).ToArray();
+                json = JsonConvert.SerializeObject(seq);
+            }
+            return new OkObjectResult(json);
         }
     }
 }
