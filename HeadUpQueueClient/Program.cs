@@ -8,7 +8,7 @@ namespace HeadUpQueueClient
 {
     class Program
     {
-        const string ServiceBusConnectionString = "Endpoint=sb://headupfizzbuzz.servicebus.windows.net/;SharedAccessKeyName=client;SharedAccessKey=Emsv8xhhFfHeCwil4EU/kAnlGaUudTDo+h13y/BbKOY=";
+        const string ServiceBusConnectionString = "Endpoint=sb://headupfizzbuzz.servicebus.windows.net/;SharedAccessKeyName=client;SharedAccessKey=";
         const string ReqQueueName = "requests";
         const string RespQueueName = "response";
         private static QueueClient outQ;
@@ -21,9 +21,14 @@ namespace HeadUpQueueClient
 
         static async Task MainAsync()
         {
+            // Get authed
+            Console.WriteLine("Please provide Shared Access Key:");
+            var sak = Console.ReadLine();
+            var fullConnString = ServiceBusConnectionString + sak;
+            
             // Setup queues
-            outQ = new QueueClient(ServiceBusConnectionString, ReqQueueName);
-            inQ = new QueueClient(ServiceBusConnectionString, RespQueueName);
+            outQ = new QueueClient(fullConnString, ReqQueueName);
+            inQ = new QueueClient(fullConnString, RespQueueName);
 
             // Add listener
             var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
